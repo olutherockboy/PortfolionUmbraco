@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+
+
+    <div id="header" class="home" @*style="background:url(@Umbraco.Media(Model.Banner.Id).url"*@>
+
+        <div class="container">
+            <div class="header-content">
+                <h1>I'm <span class="typed"></span></h1>
+                <p>@*@Model.FullName*@</p>
+
+                <ul class="list-unstyled list-social">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="ion-social-tumblr"></i></a></li>
+                    <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Partials/_About.cshtml")
+
+    @Html.Partial("~/Views/Partials/_Services.cshtml")
+
+    @Html.Partial("~/Views/Partials/_portfolio.cshtml")
+
+    @Html.Partial("~/Views/Partials/_journal.cshtml")
+
+    @Html.Partial("~/Views/Partials/_contact.cshtml")
+
