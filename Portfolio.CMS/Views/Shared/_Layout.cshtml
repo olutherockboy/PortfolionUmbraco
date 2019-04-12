@@ -117,22 +117,19 @@
     <script src="Folio/js/main.js"></script>
     <script>
 
-        console.log(@Model.Json)
+      
 
-        @*var typing = $(".typing");
+        var typing = $(".typed");
 
         $(function () {
             typing.typed({
                 strings: [
-                    @foreach (var Skill in Model.Skills)
-                    {
-                        @Skill 
-                    }
+                   @Html.Raw(Model.Json)
                 ],
                 typeSpeed: 100,
                 loop: true,
             });
-        });*@
+        });
 
 
     </script>
