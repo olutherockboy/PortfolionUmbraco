@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inherits UmbracoViewPage<Portfolio.CMS.ViewModels.HomePageVM>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -114,6 +115,27 @@
 
     <!-- Template Main Javascript File -->
     <script src="Folio/js/main.js"></script>
+    <script>
+
+        console.log(@Model.Json)
+
+        @*var typing = $(".typing");
+
+        $(function () {
+            typing.typed({
+                strings: [
+                    @foreach (var Skill in Model.Skills)
+                    {
+                        @Skill 
+                    }
+                ],
+                typeSpeed: 100,
+                loop: true,
+            });
+        });*@
+
+
+    </script>
 
 </body>
 

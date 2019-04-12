@@ -1,4 +1,7 @@
-﻿
+﻿@inherits UmbracoViewPage<Portfolio.CMS.ViewModels.HomePageVM>
+
+
+
 <div id="portfolio" class="text-center paddsection">
 
     <div class="container">
@@ -26,41 +29,20 @@
 
                 <div class="portfolio-container">
 
-                    <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign">
-                        <a class="popup-img" href="folio/images/portfolio/1.jpg">
-                            <img src="folio/images/portfolio/1.jpg" alt="img">
-                        </a>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits photography">
-                        <a class="popup-img" href="folio/images/portfolio/2.jpg">
-                            <img src="folio/images/portfolio/2.jpg" alt="img">
-                        </a>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding webdesig photographyn">
-                        <a class="popup-img" href="folio/images/portfolio/3.jpg">
-                            <img src="folio/images/portfolio/3.jpg" alt="img">
-                        </a>
-                    </div>
+                    @foreach (var Picture in Model.Pictures)
+                    {
+                        
 
-                    <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups webdesign photography">
-                        <a class="popup-img" href="folio/images/portfolio/4.jpg">
-                            <img src="folio/images/portfolio/4.jpg" alt="img">
-                        </a>
-                    </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits photography">
-                        <a class="popup-img" href="folio/images/portfolio/5.jpg">
-                            <img src="folio/images/portfolio/5.jpg" alt="img">
-                        </a>
-                    </div>
+                        <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign">
+                            <a class="popup-img" href="@Umbraco.TypedMedia(Picture.Image.Id.ToString()).Url">
+                                <img src="@Umbraco.TypedMedia(Picture.Image.Id.ToString()).Url" alt="img">
+                            </a>
+                        </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits webdesign">
-                        <a class="popup-img" href="folio/images/portfolio/6.jpg">
-                            <img src="folio/images/portfolio/6.jpg" alt="img">
-                        </a>
-                    </div>
+                    }
 
                 </div>
             </div>

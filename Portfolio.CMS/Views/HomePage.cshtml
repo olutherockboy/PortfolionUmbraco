@@ -1,19 +1,27 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+﻿
+@inherits UmbracoViewPage<Portfolio.CMS.ViewModels.HomePageVM>
     @using ContentModels = Umbraco.Web.PublishedContentModels;
     @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
+    
 
 
 
-    <div id="header" class="home" @*style="background:url(@Umbraco.Media(Model.Banner.Id).url"*@>
+
+    <div id="header" class="home" style="background:url(@Umbraco.Media(Model.Banner.Id).url">
+
+        
 
         <div class="container">
             <div class="header-content">
-                <h1>I'm <span class="typed"></span></h1>
-                <p>@*@Model.FullName*@</p>
-
+                <h1>I'm <span class="typing"></span></h1>
+                <p>@Model.FullName</p>
+                @foreach (var item in Model.Skills)
+                {
+                    @item<br />
+                }
                 <ul class="list-unstyled list-social">
                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                     <li><a href="#"><i class="ion-social-twitter"></i></a></li>
